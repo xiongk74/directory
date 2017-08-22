@@ -50,6 +50,9 @@ ini_set('error_reporting', E_ALL ^ E_NOTICE);
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head>
 	<meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
+  <!--Meta needed in order for Media Query to execute-->
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <!--End of Media Query Meta tag-->
   <link href="http://fonts.googleapis.com/css?family=Open+Sans:400italic,400,600,700" rel="stylesheet" type="text/css">
 	<link rel="stylesheet" type="text/css" media="all" href="styles/libraries.css"/>
 	<link rel="stylesheet" type="text/css" media="all" href="styles/oocss.css"/>
@@ -57,7 +60,7 @@ ini_set('error_reporting', E_ALL ^ E_NOTICE);
 	<link rel="stylesheet" type="text/css" media="all" href="styles/styles.css">
 	<script type="text/javascript" src="scripts/jquery-1.6.2.min.js"></script>
 	<script type="text/javascript" src="scripts/jquery-ui-1.8.16.custom.min.js"></script>
-	<script type="text/javascript">
+  <script type="text/javascript">
 	    $(document).ready(function(){
 	        // setup jQuery UI items
             $("#tabs").tabs();
@@ -69,6 +72,21 @@ ini_set('error_reporting', E_ALL ^ E_NOTICE);
                 },
                 function(){
                     $("#titanServicesLinks").fadeOut(200);
+            });
+            //Togglers for Drop Down Menus
+            jQuery('.toggle-nav').click(function(e) {
+              jQuery(this).toggleClass('oo-simpleHList');
+              jQuery('.oo-size1of1 ul').toggleClass('oo-simpleHList');
+            });
+            jQuery('.toggle-nav2').click(function(e) {
+              jQuery(this).toggleClass('oo-simpleHFloatList');
+              jQuery('.uwo-audience-nav ul').toggleClass('oo-simpleHFloatList');
+            });
+            jQuery('#titanServicesLink').click(function(e) {
+              jQuery(this).toggleClass('titan-servicesNav');
+              jQuery('#titanServicesLink ul').toggleClass('titan-servicesNav');
+
+              e.preventDefault();
             });
 	    });
 	</script>
@@ -110,6 +128,10 @@ ini_set('error_reporting', E_ALL ^ E_NOTICE);
 <body>
 <div class="oo-line uwo-div-center oo-gs960 uwo-top-nav">
 	<div class="oo-unit oo-size1of1">
+    <!--Drop Down Menu Icons-->
+      <a class="toggle-nav" href="#">&#9776;</a>
+      <a class="toggle-nav2" href="#">&#9776;</a>
+    <!--End of Menu Icons-->
 		<ul class="oo-simpleHList">
 			<li><a href="http://www.uwosh.edu/home/about-uw-oshkosh">About</a></li>
       <li><a href="http://www.uwosh.edu/home/future-students/undergraduate/academics">Academics</a></li>
@@ -120,18 +142,18 @@ ini_set('error_reporting', E_ALL ^ E_NOTICE);
       <li><a href="http://www.uwosh.edu/home/resources">Resources</a></li>
       <li><a href="http://www.uwosh.edu/home/calendars">Calendars</a></li>
 			<li id="titanServicesLink" class="titan_servicesNav"><a href="http://www.uwosh.edu/home/titan-services-and-campus-resources#documentContent">Titan Services</a>
-				<ul id="titanServicesLinks">
-					<li><a href="http://www.uwosh.edu/site-index/">Site Index</a></li>
-		        	<li><a href="http://www.uwosh.edu/directory/">Directory</a></li>
-              <li><a href="http://www.uwosh.edu/registrar/titanweb/">Titan Web</a></li>
-              <li><a href="http://www.uwosh.edu/titanapps/">Titan Apps</a></li>
-              <li><a href="https://titanfiles.uwosh.edu/xythoswfs/webview/xythoslogin.action">Titan Files</a></li>
-              <li><a href="https://my.wisconsin.edu/">My UW System</a></li>
-					<li><a href="https://uwosh.courses.wisconsin.edu/">Desire2Learn (D2L)</a></li>
-					<li><a href="http://www.uwosh.edu/library/">Polk Library</a></li>
-					<li><a href="http://www.uwosh.edu/myuwo/">MyUWO</a></li>
-					<li><a href="https://uwosh.collegiatelink.net/">Student Clubs &amp; Orgs</a></li>
-          <li><a href="https://uwosh.joinhandshake.com/login">Handshake</a></li>
+				<ul id="titanServicesLinks" class="titan-servicesNav"> <!--Added class for toggle(Kong)-->
+					<li><a href="http://www.uwosh.edu/site-index/" class="services-link">Site Index</a></li>
+		      <li><a href="http://www.uwosh.edu/directory/" class="services-link">Directory</a></li>
+          <li><a href="http://www.uwosh.edu/registrar/titanweb/" class="services-link">Titan Web</a></li>
+          <li><a href="http://www.uwosh.edu/titanapps/" class="services-link">Titan Apps</a></li>
+          <li><a href="https://titanfiles.uwosh.edu/xythoswfs/webview/xythoslogin.action" class="services-link">Titan Files</a></li>
+          <li><a href="https://my.wisconsin.edu/" class="services-link">My UW System</a></li>
+					<li><a href="https://uwosh.courses.wisconsin.edu/" class="services-link">Desire2Learn (D2L)</a></li>
+					<li><a href="http://www.uwosh.edu/library/" class="services-link">Polk Library</a></li>
+					<li><a href="http://www.uwosh.edu/myuwo/" class="services-link">MyUWO</a></li>
+					<li><a href="https://uwosh.collegiatelink.net/" class="services-link">Student Clubs &amp; Orgs</a></li>
+          <li><a href="https://uwosh.joinhandshake.com/login" class="services-link">Handshake</a></li>
 				</ul>
 			</li>
 		</ul>
@@ -141,11 +163,11 @@ ini_set('error_reporting', E_ALL ^ E_NOTICE);
 	<div class="oo-head uwo-audience-nav oo-bbmw oo-bhnw">
 		<a class="oo-fl" href="http://www.uwosh.edu/"><img class="uwo-logo oo-mhl" src="img/uwo-wordmark.png" alt="University of Wisconsin Oshkosh"/></a>
 		<ul class="oo-simpleHFloatList">
-        	<li><a href="http://www.uwosh.edu/home/future-students">Future Students</a></li>
-	        <li><a href="http://www.uwosh.edu/home/parents-and-family">Parents</a></li>
-	       	<li><a href=" http://www.uwosh.edu/alumni">Alumni</a></li>
-	        <li><a href="http://www.uwosh.edu/home/faculty-staff">Faculty and Staff</a></li>
-	        <li><a href="http://www.uwosh.edu/home/current-students">Current Students</a></li>
+        	<li><a href="http://www.uwosh.edu/home/future-students" class="simpleHFloatList">Future Students</a></li>
+	        <li><a href="http://www.uwosh.edu/home/parents-and-family" class="simpleHFloatList">Parents</a></li>
+	       	<li><a href=" http://www.uwosh.edu/alumni" class="simpleHFloatList">Alumni</a></li>
+	        <li><a href="http://www.uwosh.edu/home/faculty-staff" class="simpleHFloatList">Faculty and Staff</a></li>
+	        <li><a href="http://www.uwosh.edu/home/current-students" class="simpleHFloatList">Current Students</a></li>
 		</ul>
 		<!--Search -->
 		<div id="google-searchbox" class="uwosh-searchbox oo-fr oo-prm">
@@ -162,7 +184,7 @@ ini_set('error_reporting', E_ALL ^ E_NOTICE);
 			<script type="text/javascript" src="http://www.google.com/coop/cse/brand?form=searchbox_016914008736719096284%3Aeascmls-b2u&amp;lang=en"></script>
 			<div id="results_016914008736719096284:eascmls-b2u" style="display:none">
 			 	<div class="cse-closeResults">
-			   		<a>&times; Close</a>
+			   		<a>&times;</a>
 			 	</div>
 			 	<div class="cse-resultsContainer"></div>
 			</div>
@@ -192,7 +214,7 @@ ini_set('error_reporting', E_ALL ^ E_NOTICE);
             <div id="tabs">
                 <ul class="tabs">
         		    <li><a href="#tab-search">Search</a></li>
-        		    <li><a href="#tab-info">Updating Your Information</a></li>
+        		    <li><a href="#tab-info">Update Your Information</a></li>
         		    <li><a href="#tab-printed">Printed Directory</a></li>
                     <li><a href="#tab-retired">Retired Staff</a></li>
         		</ul>
@@ -212,7 +234,7 @@ ini_set('error_reporting', E_ALL ^ E_NOTICE);
 
                             <form name="bydept" method="get" action="" class="oo-ptl">
                               <label for="department"><strong>by Department:</strong></label><br />
-                              <select name="department">
+                              <select class="department" name="department">
                                 <option value=""></option>
                                 <?php
                                     $depts = file('depts.txt');

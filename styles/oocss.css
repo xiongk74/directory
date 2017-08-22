@@ -1,4 +1,4 @@
-/* oo-css */ 
+/* oo-css */
 
 /* **************** TEMPLATE ***************** */
 /* ====== Page Head, Body, and Foot ====== */
@@ -31,7 +31,7 @@ body{_text-align:center;}/* IE5.5 */
 .oo-line{*zoom:1;}
 .oo-unit{float:left;}
 .oo-size1of1{float:none;}
-.oo-size1of2{width:50%;}
+.oo-size1of2{width:100%; font-size: 83%}
 .oo-size1of3{width:33.33333%;}d
 .oo-size2of3{width:66.66666%;}
 .oo-size1of4{width:25%;}
@@ -63,7 +63,6 @@ code{color:#0B8C8F;}
 /* links */
 a {color: #000; text-decoration: none;}
 a:focus, a:hover {text-decoration: underline;}
-a:focus{background-color:#FFFFCC;}
 a:visited { color:#333; }
 /* ====== Lists ======*/
 /* numbered list */
@@ -107,10 +106,10 @@ h6, .oo-h6{font-size:108%; font-weight:normal; font-style: italic; color:#333;}
 .oo-category{font-size:108%; font-weight:normal; font-style: normal; text-transform:uppercase; color: #333;}
 .oo-category a{color: #333;}
 
-/** 
- * Spacing classes 
+/**
+ * Spacing classes
  * Should be used to modify the default spacing between objects (not between nodes of the same object)
- * Please use judiciously. You want to be using defaults most of the time, these are exceptions! 
+ * Please use judiciously. You want to be using defaults most of the time, these are exceptions!
  * <type><location><size>
  */
  /* ====== Default spacing ====== */
@@ -118,7 +117,7 @@ h1, h2, h3, h4, h5, h6, ul, ol,dl, p,blockquote, .oo-media {margin:10px;}
 h1, h2, h3, h4, h5, h6,img{padding-bottom:0px;}
 pre{margin: 10px;}
 table h1,table h2,table h3, table h4, table h5, table h6, table p, table ul, table ol, table dl{padding:0;}
- 
+
 /* spacing helpers
 p,m = padding,margin
 a,t,r,b,l,h,v = all,top,right,bottom,left,horizontal,vertical
@@ -127,13 +126,13 @@ s,m,l,n = small(5px),medium(10px),large(20px),none(0px)
 
 .oo-ptn,.oo-pvn,.oo-pan{padding-top:0px}
 .oo-pts,.oo-pvs,.oo-pas{padding-top:5px}
-.oo-ptm,.oo-pvm,.oo-pam{padding-top:10px}
+.oo-pvm,.oo-pam{padding-top:10px}
 .oo-ptl,.oo-pvl,.oo-pal{padding-top:20px}
 .oo-prn,.oo-phn,.oo-pan{padding-right:0px}
 .oo-prs,.oo-phs,.oo-pas{padding-right:5px}
 .oo-prm,.oo-phm,.oo-pam{padding-right:10px}
 .oo-prl,.oo-phl,.oo-pal{padding-right:20px}
-.oo-pbn,.oo-pvn,.oo-pan{padding-bottom:0px}  
+.oo-pbn,.oo-pvn,.oo-pan{padding-bottom:0px}
 .oo-pbs,.oo-pvs,.oo-pas{padding-bottom:5px}
 .oo-pbm,.oo-pvm,.oo-pam{padding-bottom:10px}
 .oo-pbl,.oo-pvl,.oo-pal{padding-bottom:20px}
@@ -149,7 +148,7 @@ s,m,l,n = small(5px),medium(10px),large(20px),none(0px)
 .oo-mrs,.oo-mhs,.oo-mas{margin-right:5px}
 .oo-mrm,.oo-mhm,.oo-mam{margin-right:10px}
 .oo-mrl,.oo-mhl,.oo-mal{margin-right:20px}
-.oo-mbn,.oo-mvn,.oo-man{margin-bottom:0px}  
+.oo-mbn,.oo-mvn,.oo-man{margin-bottom:0px}
 .oo-mbs,.oo-mvs,.oo-mas{margin-bottom:5px}
 .oo-mbm,.oo-mvm,.oo-mam{margin-bottom:10px}
 .oo-mbl,.oo-mvl,.oo-mal{margin-bottom:20px}
@@ -157,6 +156,7 @@ s,m,l,n = small(5px),medium(10px),large(20px),none(0px)
 .oo-mls,.oo-mhs,.oo-mas{margin-left:5px}
 .oo-mlm,.oo-mhm,.oo-mam{margin-left:10px}
 .oo-mll,.oo-mhl,.oo-mal{margin-left:20px}
+.oo-ptm{padding-top: 0px;}
 
 /*  border helpers
 b = border
@@ -198,9 +198,9 @@ b,w,g = black(#000000),white(#FFFFFF),grey(#CCCCCC)
 .oo-bhng,.oo-bhsg,.oo-bhmg,.oo-bhlg,.oo-bvng,.oo-bvsg,.oo-bvmg,.oo-bvlg,.oo-bang,.oo-basg,.oo-bamg,.oo-balg{border-style:solid;}
 
 
-/** 
- * Data Table 
- * Allows you to align various table cells so that the alignment class can be placed on either the table, table row, or table cell 
+/**
+ * Data Table
+ * Allows you to align various table cells so that the alignment class can be placed on either the table, table row, or table cell
  * Cell takes precedence over table row and table
  * Table row takes precedence over table
  */
@@ -210,7 +210,7 @@ th, td{/*vertical-align:top;*/}
 /* horizontal alignment */
 .oo-txtC, table .oo-txtC, table tr .oo-txtC{text-align:center;}
 .oo-txtL, table .oo-txtL, table tr .oo-txtL{text-align:left;}
-.oo-txtR, table .oo-txtR, table tr .oo-txtR{text-align:right;}
+.oo-txtR, table .oo-txtR, table tr .oo-txtR{text-align:center;}/*Centering .oo-lastUnit horizontally*/
 /* vertical alignment */
 .oo-txtT, table .oo-txtT, table tr .oo-txtT{vertical-align:top;}
 .oo-txtB, table .oo-txtB, table tr .oo-txtB{vertical-align:bottom;}
