@@ -29,13 +29,11 @@ html, body {
   background-repeat: repeat-x;
   float: right;
   padding-bottom: 6px;
-  padding-left: 20px;
   padding-right: 20px;
   position: relative;
 }
 #titanServicesLinks {
   background-color: #333;
-  : ;
   border: 1px solid gray;
   display: none;
   left: 0;
@@ -148,20 +146,15 @@ p {  margin-left: 0 }
   }
   /* Logo Modification */
   img.uwo-logo{
-    position: fixed;
-    top: 50%;
-    left: 50%;
-    margin-top: -315px;
-    margin-left: -85px;
+    position: absolute;
+    left: 24.5%;
     width: 166px;
   }
   /*Search Bar Modification */
   #google-searchbox{
-    position: fixed;
-    top: 50%;
-    left: 50%;
-    margin-left: -89px;
-    margin-top: -363px;
+    position: absolute;
+    top: .5%;
+    left: 25%;
     color: white;
   }
   .searchButton{
@@ -210,8 +203,8 @@ p {  margin-left: 0 }
     z-index: 1000;
     background: #444;
     font-size: 130%;
-    width: 92px;
-    padding-left: 25px;
+    width: 91.5px;
+    padding-left: 15px;
   }
   a.services-link{
     padding-bottom: 10px;
@@ -260,17 +253,31 @@ p {  margin-left: 0 }
     width: 100%;
   }
   #tabs{
-    display: none;
     width: 95%;
     left: -5px;
   }
   .ui-tabs-nav{
-    width: 99%;
+	width: 98.5%;
+    font-size: 65%;
+  }
+  #tab-search{
+	width: 317px;
+	font-size: 70%;
+  }
+  #tab-info, #tab-printed, #tab-retired{
+	width: 325px;
     font-size: 50%;
   }
-  #tab-search, #tab-info, #tab-printed, #tab-retired{
-    width: 100%;
-    font-size: 60%;
+  .uwo-search{
+    text-align: center;
+  }
+  .uwo-search .oo-size1of2{
+    display: inline-block;
+    text-align: left;
+    float:inherit;
+  }
+  #results{
+    font-size: 70%;
   }
   #q, .department{
     border: 1px solid black;
@@ -279,23 +286,268 @@ p {  margin-left: 0 }
     width: 95%;
     display: block;
   }
-  .oo-banb img{
-
-  }
   /* Footer */
   .oo-size1of2{
-    width: 50%;
     font-size: 70%;
   }
   .oo-size1of2 ul, .oo-lastUnit a{
-    display: block;
+    font-size: 75%;
+  }
+  .center{
+  	display: flex;
+	justify-content: center;
+  }
+  .footerMidNav{
+	padding: 0 20px;
   }
   .uwo-inlineImg{
-    padding-top: 10px;
-    padding-bottom: 50px;
+	vertical-align: middle;
+  }
+  /*Nested Media Query*/
+  @media (max-width: 375px){
+    /* Logo Modification */
+    img.uwo-logo{
+      margin-left: 2.8%;
+    }
+    /*Search Bar Modification*/
+    #google-searchbox{
+      margin-left: -1.5%;
+    }
+    /*Body Modifcation*/
+    .ui-tabs-nav{
+      font-size: .53rem;
+    }
+    .uwo-search .oo-size1of2{
+      width: 64%;
+    }
+  }
+  @media (max-width: 360px){
+    /* Logo Modification */
+    img.uwo-logo{
+      margin-left: -.8%;
+    }
+    /*Search Bar Modification */
+    #google-searchbox{
+      margin-left: -5%;
+    }
+    /*Body Modifcation*/
+    #tabs{
+      width: 94%;
+    }
+    .ui-tabs-nav{
+      font-size: 50%;
+    }
+    .uwo-search .oo-size1of2{
+      width: 75%;
+    }
   }
 }
 /* Ipads */
-@media screen and (max-width: 1024px){
-
+@media screen and (max-width: 768px){
+  *{
+    margin: 0;
+    padding: 0;
+  }
+  /* Resizing nav height */
+  .uwo-top-nav{
+    height: 50px;
+    width: 100%;
+  }
+  /* Logo Modification */
+  img.uwo-logo{
+    position: absolute;
+    left: 24.5%;
+    width: 166px;
+  }
+  /*Search Bar Modification */
+  #google-searchbox{
+    position: absolute;
+    top: .5%;
+    left: 25%;
+    color: white;
+  }
+  .searchButton{
+    color: black;
+    border: 1px solid black;
+    background: white;
+    padding: 2px 5px 2px 5px;
+    border-radius: 5px;
+  }
+  /* Title Modification */
+  #title-bar{
+    padding-top: 30px;
+    text-align: center;
+    font-size: 150%;
+  }
+  /* Top Nav */
+  .oo-size1of1 ul, .oo-size1of1:active ul{
+    border: 2px solid black;
+    border-left: none;
+    left: -10px;
+    z-index: 1000;
+  }
+  .oo-size1of1 ul.oo-simpleHList{
+    display: none;
+  }
+  .oo-size1of1 ul{
+    position: absolute;
+    background: #444;
+  }
+  .oo-size1of1 li{
+    margin: 0 0 15px 0;
+    font-size: 75%;
+  }
+  .oo-size1of1 a{
+    display: inline-block;
+    color: white;
+  }
+  .toggle-nav{
+    border-right: 2px solid black;
+  }
+  #titanServicesLink ul, #titanServicesLink:active ul{
+    border: 2px solid black;
+    border-left: none;
+    border-top: none;
+    left: -10px;
+    z-index: 1000;
+    background: #444;
+    font-size: 130%;
+    width: 91.5px;
+    padding-left: 15px;
+  }
+  a.services-link{
+    padding-bottom: 10px;
+  }
+  .oo-size1of1 li{
+    margin: 0 0 15px 0;
+  }
+  /*2nd Nav*/
+  .uwo-audience-nav{
+    width: 100%;
+  }
+  .uwo-audience-nav ul, .uwo-audience-nav:active ul{
+    border: 2px solid black;
+    border-right: none;
+    top: 39px;
+    right: -10px;
+    z-index: 1000;
+    padding-top: 8px;
+  }
+  .uwo-audience-nav ul.oo-simpleHFloatList{
+    display: none;
+  }
+  .uwo-audience-nav ul{
+    position: absolute;
+    background: #444;
+  }
+  .uwo-audience-nav li{
+    margin: 0 0 15px 0;
+  }
+  .toggle-nav2{
+    float: right;
+    border-left: 2px solid black;
+  }
+  a.simpleHFloatList{
+    color: white;
+    padding-left: 10px;
+    padding-right: 15px;
+  }
+  /* Body/Content */
+  .oo-page{
+    border-left: none;
+    border-right: none;
+    width: 100%;
+  }
+  .oo-main{
+    width: 100%;
+  }
+  #tabs{
+    width: 95%;
+    left: -5px;
+  }
+  .ui-tabs-nav{
+	width: 98.5%;
+    font-size: 65%;
+  }
+  #tab-search{
+	width: 317px;
+	font-size: 70%;
+  }
+  #tab-info, #tab-printed, #tab-retired{
+	width: 325px;
+    font-size: 50%;
+  }
+  .uwo-search{
+    text-align: center;
+  }
+  .uwo-search .oo-size1of2{
+    display: inline-block;
+    text-align: left;
+    float:inherit;
+  }
+  #results{
+    font-size: 70%;
+  }
+  #q, .department{
+    border: 1px solid black;
+  }
+  #results{
+    width: 95%;
+    display: block;
+  }
+  /* Footer */
+  .oo-size1of2{
+    font-size: 70%;
+  }
+  .oo-size1of2 ul, .oo-lastUnit a{
+    font-size: 75%;
+  }
+  .center{
+  	display: flex;
+	justify-content: center;
+  }
+  .footerMidNav{
+	padding: 0 20px;
+  }
+  .uwo-inlineImg{
+	vertical-align: middle;
+  }
+  /*Nested Media Query*/
+  @media (max-width: 375px){
+    /* Logo Modification */
+    img.uwo-logo{
+      margin-left: 2.8%;
+    }
+    /*Search Bar Modification*/
+    #google-searchbox{
+      margin-left: -1.5%;
+    }
+    /*Body Modifcation*/
+    .ui-tabs-nav{
+      font-size: .53rem;
+    }
+    .uwo-search .oo-size1of2{
+      width: 64%;
+    }
+  }
+  @media (max-width: 360px){
+    /* Logo Modification */
+    img.uwo-logo{
+      margin-left: -.8%;
+    }
+    /*Search Bar Modification */
+    #google-searchbox{
+      margin-left: -5%;
+    }
+    /*Body Modifcation*/
+    #tabs{
+      width: 94%;
+    }
+    .ui-tabs-nav{
+      font-size: 50%;
+    }
+    .uwo-search .oo-size1of2{
+      width: 75%;
+    }
+  }
 }

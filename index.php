@@ -82,12 +82,6 @@ ini_set('error_reporting', E_ALL ^ E_NOTICE);
               jQuery(this).toggleClass('oo-simpleHFloatList');
               jQuery('.uwo-audience-nav ul').toggleClass('oo-simpleHFloatList');
             });
-            jQuery('#titanServicesLink').click(function(e) {
-              jQuery(this).toggleClass('titan-servicesNav');
-              jQuery('#titanServicesLink ul').toggleClass('titan-servicesNav');
-
-              e.preventDefault();
-            });
 	    });
 	</script>
 	<!-- Google Stuff -->
@@ -142,7 +136,7 @@ ini_set('error_reporting', E_ALL ^ E_NOTICE);
       <li><a href="http://www.uwosh.edu/home/resources">Resources</a></li>
       <li><a href="http://www.uwosh.edu/home/calendars">Calendars</a></li>
 			<li id="titanServicesLink" class="titan_servicesNav"><a href="http://www.uwosh.edu/home/titan-services-and-campus-resources#documentContent">Titan Services</a>
-				<ul id="titanServicesLinks" class="titan-servicesNav"> <!--Added class for toggle(Kong)-->
+				<ul id="titanServicesLinks">
 					<li><a href="http://www.uwosh.edu/site-index/" class="services-link">Site Index</a></li>
 		      <li><a href="http://www.uwosh.edu/directory/" class="services-link">Directory</a></li>
           <li><a href="http://www.uwosh.edu/registrar/titanweb/" class="services-link">Titan Web</a></li>
@@ -162,7 +156,7 @@ ini_set('error_reporting', E_ALL ^ E_NOTICE);
 <div class="oo-page oo-gs960 oo-bamw">
 	<div class="oo-head uwo-audience-nav oo-bbmw oo-bhnw">
 		<a class="oo-fl" href="http://www.uwosh.edu/"><img class="uwo-logo oo-mhl" src="img/uwo-wordmark.png" alt="University of Wisconsin Oshkosh"/></a>
-		<ul class="oo-simpleHFloatList">
+    <ul class="oo-simpleHFloatList">
         	<li><a href="http://www.uwosh.edu/home/future-students" class="simpleHFloatList">Future Students</a></li>
 	        <li><a href="http://www.uwosh.edu/home/parents-and-family" class="simpleHFloatList">Parents</a></li>
 	       	<li><a href=" http://www.uwosh.edu/alumni" class="simpleHFloatList">Alumni</a></li>
@@ -228,12 +222,12 @@ ini_set('error_reporting', E_ALL ^ E_NOTICE);
                                     <input type="radio" name="filter" id="employees" value="employees" <?php if($filteroption=='employees') echo "checked='checked'" ?> /><label for="employees">Staff and Faculty</label>
                                     <input type="radio" name="filter" id="students" value="students" <?php if($filteroption=='students') echo "checked='checked'" ?> /><label for="students">Students</label>
                                 </div>
-                                <input type="text" name="q" id="q" value="<?php echo $q; ?>" size="40" />
+                                <input type="text" name="q" id="q" value="<?php echo $q; ?>" size="32" />
                                 <input type="submit" name="button" id="button" value="Submit" />
                             </form>
 
                             <form name="bydept" method="get" action="" class="oo-ptl">
-                              <label for="department"><strong>by Department:</strong></label><br />
+                              <label for="department"><strong>by department:</strong></label><br />
                               <select class="department" name="department">
                                 <option value=""></option>
                                 <?php
@@ -598,7 +592,7 @@ ini_set('error_reporting', E_ALL ^ E_NOTICE);
 		</div>
 	</div>
 	<div class="oo-foot oo-line">
-		<div class="oo-unit oo-size1of2">
+		<div class="oo-unit oo-size1of2 center">
 			<ul class="oo-cleanList oo-fl">
 				<li><a href="http://www.uwosh.edu/home/future-students">Future Students</a></li>
 				<li><a href="http://www.uwosh.edu/home/parents-and-family">Parents</a></li>
@@ -608,7 +602,7 @@ ini_set('error_reporting', E_ALL ^ E_NOTICE);
 				<li><a href="http://www.uwosh.edu/home/about-uw-oshkosh">About UW Oshkosh</a></li>
 				<li><a href="http://www.uwosh.edu/home/future-students/undergraduate/academics">Academics</a></li>
 			</ul>
-			<ul class="oo-cleanList oo-fl">
+			<ul class="oo-cleanList oo-fl footerMidNav">
 				<li><a href=" http://www.titans.uwosh.edu/">Athletics</a></li>
 				<li><a href=" http://admissions.uwosh.edu/">Admissions</a></li>
 				<li><a href="http://www.uwosh.edu/home/administration">Administration</a></li>
@@ -634,7 +628,7 @@ ini_set('error_reporting', E_ALL ^ E_NOTICE);
 					<img src="img/uw-system.gif" class="uwo-inlineImg" alt="UW System" />
 				</a>
 				<a href="http://www.uwosh.edu/" target="_blank">
-					<img src="img/uwo-logo.gif" class="uwo-inlineImg" alt="UW Oshkosh" />
+					<img src="img/uwo-logo.gif" id="uwo-inlineImg" class="uwo-inlineImg" alt="UW Oshkosh" />
 				</a>
 			</div>
 		</div>
