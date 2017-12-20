@@ -47,26 +47,6 @@
 
     <script>
     $(document).ready(function(){
-      //Tab Links
-      $(".tabSearch, .searchTab").click(function(){
-        $(".searchContent").toggle();
-        return false;
-      });
-      $(".tabUpdate, .updateTab").click(function(){
-        $(".updateContent").toggle();
-        return false;
-      });
-      $(".tabPrint, .printTab").click(function(){
-        $(".printContent").toggle();
-        return false;
-      });
-      $(".tabRetire, .retireTab").click(function(){
-        $(".retireContent").toggle();
-        return false;
-      });
-      $("a").click(function(e){
-        e.preventDefault();
-      });
       //Togglers for Drop Down Menus
         //Top Nav
       $('.toggle-nav').click(function(e) {
@@ -77,6 +57,33 @@
       $('.toggle-quickLinks').click(function(e) {
         $(this).toggleClass('quick-links');
         $('.uwo-quickLinks ul').toggleClass('quick-links');
+      });
+      //Change background-color onclick for tabLinks
+      $('.tabLinks li').click(function(e){
+        $(this).addClass('white').siblings().removeClass('white');
+        e.preventDefault();
+      });
+      //TabLinks onclick to hide/show content
+      $('ul.tabLinks li').click(function(){
+        var tab_link = $(this).attr('data-tab');
+
+        $('ul.tabLinks li').removeClass('active');
+        $('.tabContent').removeClass('active');
+
+        $(this).addClass('active');
+        $('#'+tab_link).addClass('active');
+      });
+      //Change background-color onclick for searchTab-nav
+      $('.searchTab-nav li').click(function(e){
+        $(this).addClass('tabNav-white').siblings().removeClass('tabNav-white');
+        e.preventDefault();
+      });
+      //SearchTab-nav onclick to show/hide content
+      $('.searchTab-faculty').click(function(){
+        $('.department').show();
+      });
+      $('.searchTab-all, .searchTab-students').click(function(){
+        $('.department').hide();
       });
     });
     </script>
@@ -91,27 +98,28 @@
         <a class="toggle-nav">☰</a>
         <a class="toggle-quickLinks">☰</a>
         <ul class="top-nav">
-          <li><a href="#" class="topNav">About</a></li>
-          <li><a href="#" class="topNav">Academics</a></li>
-          <li><a href="#" class="topNav">Athletics</a></li>
-          <li><a href="#" class="topNav">Alumni</a></li>
-          <li><a href="#" class="topNav">Admissions</a></li>
-          <li><a href="#" class="topNav">Administration</a></li>
-          <li><a href="#" class="topNav">Resources</a></li>
-          <li><a href="#" class="topNav">Calendars</a></li>
+          <li><a href="http://www.uwosh.edu/about-uw-oshkosh/" class="topNav">About</a></li>
+          <li><a href="http://www.uwosh.edu/academics/" class="topNav">Academics</a></li>
+          <li><a href="http://www.uwoshkoshtitans.com/landing/index" class="topNav">Athletics</a></li>
+          <li><a href="http://www.uwosh.edu/alumni" class="topNav">Alumni</a></li>
+          <li><a href="https://admissions.uwosh.edu/" class="topNav">Admissions</a></li>
+          <li><a href="http://www.uwosh.edu/administration/" class="topNav">Administration</a></li>
+          <li><a href="http://www.uwosh.edu/resources/" class="topNav">Resources</a></li>
+          <li><a href="http://www.uwosh.edu/calendars/" class="topNav">Calendars</a></li>
           <li>
-            <a href="#" class="topNav">Titan Services &#9662;</a>
+            <a href="http://www.uwosh.edu/titan-services" class="topNav">Titan Services &#9662;</a>
             <ul class="titan-services">
-              <li><a href="#" class="titanServices">Site Index</a></li>
-              <li><a href="#" class="titanServices">Directory</a></li>
-              <li><a href="#" class="titanServices">Titan Web</a></li>
-              <li><a href="#" class="titanServices">Titan Apps</a></li>
-              <li><a href="#" class="titanServices">Titan Files</a></li>
-              <li><a href="#" class="titanServices">My UW System</a></li>
-              <li><a href="#" class="titanServices">Polk Library</a></li>
-              <li><a href="#" class="titanServices">MyUWO Portal</a></li>
-              <li><a href="#" class="titanServices">Student Clubs &amp; Orgs</a></li>
-              <li><a href="#" class="titanServices">Handshake</a></li>
+              <li><a href="http://www.uwosh.edu/site-index" class="titanServices">Site Index</a></li>
+              <li><a href="http://www.uwosh.edu/directory" class="titanServices">Directory</a></li>
+              <li><a href="http://www.uwosh.edu/registrar/titanweb/" class="titanServices">Titan Web</a></li>
+              <li><a href="http://www.uwosh.edu/titanapps/" class="titanServices">Titan Apps</a></li>
+              <li><a href="https://titanfiles.uwosh.edu/xythoswfs/webview/xythoslogin.action" class="titanServices">Titan Files</a></li>
+              <li><a href="https://my.wisconsin.edu/" class="titanServices">My UW System</a></li>
+              <li><a href="http://www.uwosh.edu/d2l/" class="titanServices">Desire2Learn(D2L)</a></li>
+              <li><a href="http://www.uwosh.edu/library/" class="titanServices">Polk Library</a></li>
+              <li><a href="http://www.uwosh.edu/myuwo/" class="titanServices">MyUWO Portal</a></li>
+              <li><a href="https://uwosh.collegiatelink.net/" class="titanServices">Student Clubs &amp; Orgs</a></li>
+              <li><a href="https://uwosh.joinhandshake.com/login" class="titanServices">Handshake</a></li>
             </ul>
           </li>
         </ul>
@@ -124,53 +132,65 @@
         </div> <!-- End of "logoTile" -->
         <div class="uwo-quickLinks">
           <ul class="quick-links">
-            <li><a href="#" class="quickLinks">Futuer Students</a></li>
-            <li><a href="#" class="quickLinks">Parents</a></li>
-            <li><a href="#" class="quickLinks">Alumni</a></li>
-            <li><a href="#" class="quickLinks">Faculty and Staff</a></li>
-            <li><a href="#" class="quickLinks">Current Students</a></li>
+            <li><a href="http://www.uwosh.edu/future-students/" class="quickLinks">Futuer Students</a></li>
+            <li><a href="http://www.uwosh.edu/parents-family-friends/" class="quickLinks">Parents</a></li>
+            <li><a href="http://www.uwosh.edu/alumni" class="quickLinks">Alumni</a></li>
+            <li><a href="http://www.uwosh.edu/faculty-and-staff/" class="quickLinks">Faculty and Staff</a></li>
+            <li><a href="http://www.uwosh.edu/current-students/" class="quickLinks">Current Students</a></li>
           </ul>
         </div> <!-- End of "uwo-quickLinks" -->       
       </div> <!-- End of "logo-section" -->
     </div> <!-- End of "wrapper" -->
   </header>
   <body>
-    <div class="body-wrapper">        
-        <p class="tabLinks tabSearch"><a href="#"><i class="fa fa-search" style="font-size:36px;"></i><i class="fa fa-plus plusOne" style="font-size:36px"></i></a></p>
-        <h1 class="tabLinksTitle searchTab"><a href="#">Search</a></h1>  
-        <div class="tabContent searchContent">
-            <div class="searchBy">
-              <p></p>
-            </div><!--
-        --><div class="searchExample">
-              <p><b>Examples:</b><br />
-                  <i>First and Last Name:</i> Joe Smith or Smith, Joe<br />
-                  <i>Email or Last Name:</i> smith or Smith<br />
-                  <i>Campus Phone Number: 1234</i><br /><br />
-                     This search tool is intended to provide access to general public information. This utility should not be used for the solicitation of business or for the submission of unwanted email or other uses 
-                     incompatible with the University's status as a state institution.</p>
-            </div>
+    <div class="body-wrapper">
+      <div class="body-container">
+        <ul class="tabLinks">
+          <li class="tabLinksTitle searchTab white active" data-tab="tab-1"><a href="">Search </a><i class="fa fa-search"></i></li>
+          <li class="tabLinksTitle updateTab" data-tab="tab-2"><a href="">Updating Your Information </a><i class="material-icons" style="font-size:20px;">update</i></li>
+          <li class="tabLinksTitle printTab" data-tab="tab-3"><a href="">Printed Directory </a><i class="fa fa-recycle"></i></li>
+          <li class="tabLinksTitle retireTab" data-tab="tab-4"><a href="">Retired Staff </a><i class="material-icons" style="font-size:20px">group</i></li>
+        </ul>
+      </div><!-- End of "body-container" -->   
+      <div id="tab-1" class="tabContent searchContent active">
+          <div class="searchBy">
+            <ul class="searchTab-nav">
+              <li class="searchTab-navLinks searchTab-all tabNav-white"><a href="">All</a></li>
+              <li class="searchTab-navLinks searchTab-faculty"><a href="">Faculty and Staff</a></li>
+              <li class="searchTab-navLinks searchTab-students"><a href="">Students</a></li>
+            </ul>
+            <select class="department" name="departments">
+              <option value="n/a"></option>
+              <option value="academic adivising">Academic Advising</option>
+              <option value="academic support">Academic Support</option>
+              <option value="accelerated nursing">Accelerated Nursing</option>
+            </select>
+            <input placeholder="Enter a name">
+            <button type="button">Search</button>
+          </div><!-- 
+      --><div class="searchExample">
+            <p><b>Examples:</b><br />
+                <i>First and Last Name:</i> Joe Smith or Smith, Joe<br />
+                <i>Email or Last Name:</i> smith or Smith<br />
+                <i>Campus Phone Number: 1234</i><br /><br />
+                   This search tool is intended to provide access to general public information. This utility should not be used for the solicitation of business or for the submission of unwanted email or other uses 
+                   incompatible with the University's status as a state institution.</p>
           </div>
-        <p class="tabLinks tabUpdate"><a href="#"><i class="material-icons" style="font-size:36px">update</i><i class="fa fa-plus plusTwo" style="font-size:36px"></i></a></p>
-        <h1 class="tabLinksTitle updateTab"><a href="#">Updating Your Information</a></h1>  
-        <div class=" tabContent updateContent">
-            <p><b>Student:</b> Log into <a href="#">TitanWeb</a>.</p>
-            <p><b>Employees:</b> To update your home address, visit the <a href="#">My UWSystem portal</a>; to update your departmental address, contact Rachael Kruszka in Human Resources at 
-               <a href="#">kruszkar@uwosh.edu</a>.</p>
-            <p>Under the Family Educational Rights and Privacy Act, students may have requested the nondisclosure of directory information. This means that the search may not reveal the names of selected students.</p>
-          </div>
-        <p class="tabLinks tabPrint"><a href="#"><i class="fa fa-recycle" style="font-size:36px"></i><i class="fa fa-print" style="font-size:36px;"></i><i class="fa fa-plus plusThree" style="font-size:36px"></i></a></h1>
-        <h1 class="tabLinksTitle printTab"><a href="#">Printed Directory</a></h1>  
-        <div class="tabContent printContent">
-            <p>When it comes to sustainable practices, there are not many institutions that do it better than UW Oshkosh. In accordance with the University’s Sustainability Plan, there is a strong, 
-              growing on-campus recycling and waste reduction program. With this in mind it has been decided to forego the printed directory and instead embrace new technology.</p>
-            <p>The online directory, also availaile in the <a href="#">University Mobile App</a>, is a quick and easy way to get the inofrmation you need quickly.</p>
-          </div>
-        <p class="tabLinks tabRetire"><a href="#"><i class="material-icons" style="font-size:36px">group</i><i class="fa fa-plus plusFour" style="font-size:36px"></i></a></p>
-        <h1 class="tabLinksTitle retireTab"><a href="#">Retired Staff</a></h1>  
-        <div class="tabContent retireContent">
-            <a href="#">Directory of Retired Staff 2014-2015</a>
-          </div>
+      </div><!-- End of "searchContent" -->
+      <div id="tab-2" class=" tabContent updateContent hide">
+          <p><b>Student:</b> Log into <a href="http://www.uwosh.edu/registrar/titanweb/">TitanWeb</a>.</p>
+          <p><b>Employees:</b> To update your home address, visit the <a href="https://wayf.wisconsin.edu/DS/WAYF?entityID=https%3A%2F%2Fmy.wisconsin.edu%2Fshibboleth&return=https%3A%2F%2Fmy.wisconsin.edu%2FShibboleth.sso%2FDS%3FSAMLDS%3D1%26target%3Dcookie%253A1513791255_705f">My UWSystem portal</a>; to update your departmental address, contact Rachael Kruszka in Human Resources at 
+             <a href="#">roeverm@uwosh.edu</a>.</p>
+          <p>Under the Family Educational Rights and Privacy Act, students may have requested the nondisclosure of directory information. This means that the search may not reveal the names of selected students.</p>
+      </div><!-- End of "updateContent" -->
+      <div id="tab-3" class="tabContent printContent hide">
+          <p>When it comes to sustainable practices, there are not many institutions that do it better than UW Oshkosh. In accordance with the University’s Sustainability Plan, there is a strong, 
+            growing on-campus recycling and waste reduction program. With this in mind it has been decided to forego the printed directory and instead embrace new technology.</p>
+          <p>The online directory, also availaile in the <a href="https://umc.uwosh.edu/">University Mobile App</a>, is a quick and easy way to get the inofrmation you need quickly.</p>
+      </div><!-- End of "printContent" -->
+      <div id="tab-4" class="tabContent retireContent hide">
+          <a href="http://www.uwosh.edu/directory/Directory_Retired_Staff_2014-15.pdf">Directory of Retired Staff 2014-2015</a>
+      </div><!-- End of "retireContent" -->
     </div>
 
     <!-- Google Analytics: change UA-XXXXX-X to be your site's ID -->
@@ -192,13 +212,13 @@
       <div class="midFooter-container">
         <div class="location-container mid-child">
           <div class="wismap">
-            <a href="#"><img src="/images/footer/wismap-color.png"></a>
+            <a href="https://www.google.com/maps?q=University+of+Wisconsin+Oshkosh+800+Algoma+Blvd.+Oshkosh,+WI+54901&um=1&ie=UTF-8&hl=en&sa=N&tab=wl" target="_blank"><img src="/images/footer/wismap-color.png"></a>
           </div> <!-- End of "wismap" -->
           <div class="address-phone">
             <p><b>Location</b></p>
             <p>
-              <a href="#">University of Wisconsin Oshkosh</a><br />
-              <a href="#">
+              <a href="https://www.google.com/maps?q=University+of+Wisconsin+Oshkosh+800+Algoma+Blvd.+Oshkosh,+WI+54901&um=1&ie=UTF-8&hl=en&sa=N&tab=wl" target="_blank">University of Wisconsin Oshkosh</a><br />
+              <a href="https://www.google.com/maps/place/University+of+Wisconsin-Oshkosh/@44.0253186,-88.5532102,17z/data=!3m1!4b1!4m5!3m4!1s0x8803ebe40a08408b:0xb8f8ec18c1c8b267!8m2!3d44.0253186!4d-88.5510215?hl=en" target="_blank">
                 800 Algoma Blvd.<br />
                 Oshkosh, WI 54901<br />
               </a>
@@ -209,33 +229,33 @@
         <div class="mobileEmergency-container mid-child">
           <div class="mobile-emergency">
             <div>
-              <a href="#"><i class="fa fa-mobile desaturate" aria-hidden="true"></i></a>
+              <a href="https://umc.uwosh.edu/mobile-app/"><i class="fa fa-mobile desaturate" aria-hidden="true"></i></a>
             </div>
             <div>  
-              <a href="#"><i class="fa fa-exclamation-triangle desaturate" aria-hidden="true"></i></a>
+              <a href="http://emergency.uwosh.edu/"><i class="fa fa-exclamation-triangle desaturate" aria-hidden="true"></i></a>
             </div>
           </div> <!-- End of "mobile-emergency" -->
           <div class="mobileEmergency-links">
             <p class="mobileEmergency-title"><b>Quick Links</b></p>
-            <p><a href="#">Download UW Oshkosh's Mobile App</a>
-            <p><a href="#" class="emergency-p">Emergency and Safety Information</a></p>
+            <p><a href="https://umc.uwosh.edu/mobile-app/">Download UW Oshkosh's Mobile App</a>
+            <p><a href="http://emergency.uwosh.edu/" class="emergency-p">Emergency and Safety Information</a></p>
           </div> <!-- End of "mobileEmergency-links" -->
         </div> <!-- End of mobileEmergency-container" -->
         <div class="resources-container mid-child">
           <div class="resourcesLinks">
             <p><b>Resources</b></p>
             <ul class="resources-links">
-              <li><a href="#">Accessibility</a></li>
-              <li><a href="#">Get Directions</a></li>
-              <li><a href="#">Media Relations</a></li>
-              <li><a href="#">Work at UW Oshkosh</a></li>
+              <li><a href="http://www.uwosh.edu/resources/accessibility/">Accessibility</a></li>
+              <li><a href="https://www.google.com/maps?q=University+of+Wisconsin+Oshkosh+800+Algoma+Blvd.+Oshkosh,+WI+54901&um=1&ie=UTF-8&hl=en&sa=N&tab=wl" target="_blank">Get Directions</a></li>
+              <li><a href="https://umc.uwosh.edu/for-media/">Media Relations</a></li>
+              <li><a href="https://hr.uwosh.edu/careers/">Work at UW Oshkosh</a></li>
             </ul>
           </div> <!-- End of "resourcesLinks" -->
         </div> <!-- End of "resources-container" -->
         <div class="accredited-container mid-child">
           <div class="accredited-uwo">
-              <a href="#"><img src="/images/footer/hlc.png" class="accredited"></a>
-              <a href="#"><img src="/images/footer/uw-system.png" class="uwo-system"></a>
+              <a href="http://www.hlcommission.org/?option=com_directory&Action=ShowBasic&instid=2030" target="_blank"><img src="/images/footer/hlc.png" class="accredited"></a>
+              <a href="https://www.wisconsin.edu/" target="_blank"><img src="/images/footer/uw-system.png" class="uwo-system"></a>
           </div> <!-- End of "accredted-uwo" -->
         </div> <!-- End of "accredited-container" -->
       </div> <!-- End of "midFooter-container" -->
@@ -245,13 +265,13 @@
         <span>&copy;<script>document.write(new Date().getFullYear())</script> UW Board of Regents</span>
       </div> <!-- End of "copyright" -->
       <div class="socialMedia-footer">
-          <a href="#"><i class="fa fa-facebook fa-2x desaturate" aria-hidden="true" alt="Facebook logo"></i></a>
-          <a href="#"><i class="fa fa-twitter fa-2x desaturate" aria-hidden="true" alt="Twitter logo"></i></a>
-          <a href="#"><i class="fa fa-instagram fa-2x desaturate" aria-hidden="true" alt="Instagram logo"></i></a>
-          <a href="#"><i class="fa fa-youtube-play fa-2x desaturate" aria-hidden="true" alt="YouTube logo"></i></a>
-          <a href="#"><i class="fa fa-linkedin fa-2x desaturate" aria-hidden="true" alt="LinkedIn logo"></i></a>
-          <a href="#"><i class="fa fa-pinterest-p fa-2x desaturate" aria-hidden="true" alt="Pinterest logo"></i></a>
-          <a href="#"><i class="fa fa-flickr fa-2x desaturate" aria-hidden="true" alt="Flickr logo"></i></a>
+          <a href="https://www.facebook.com/uwoshkosh" target="_blank"><i class="fa fa-facebook fa-2x desaturate" aria-hidden="true" alt="Facebook logo"></i></a>
+          <a href="https://twitter.com/uwoshkosh" target="_blank"><i class="fa fa-twitter fa-2x desaturate" aria-hidden="true" alt="Twitter logo"></i></a>
+          <a href="https://www.instagram.com/uwoshkosh/" target="_blank"><i class="fa fa-instagram fa-2x desaturate" aria-hidden="true" alt="Instagram logo"></i></a>
+          <a href="https://www.youtube.com/user/uwosh" target="_blank"><i class="fa fa-youtube-play fa-2x desaturate" aria-hidden="true" alt="YouTube logo"></i></a>
+          <a href="https://www.linkedin.com/edu/school?id=19693" target="_blank"><i class="fa fa-linkedin fa-2x desaturate" aria-hidden="true" alt="LinkedIn logo"></i></a>
+          <a href="https://www.pinterest.com/uwoshkosh/" target="_blank"><i class="fa fa-pinterest-p fa-2x desaturate" aria-hidden="true" alt="Pinterest logo"></i></a>
+          <a href="https://www.flickr.com/photos/uwoshkosh/sets/" target="_blank"><i class="fa fa-flickr fa-2x desaturate" aria-hidden="true" alt="Flickr logo"></i></a>
       </div> <!--End of "socialMedia-Icons" -->
     </div> <!-- End of "bottomContainer" -->
   </footer>
